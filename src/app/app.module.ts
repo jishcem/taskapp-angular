@@ -7,12 +7,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UsersModule } from './users/users.module';
 import { TasksModule } from './tasks/tasks.module';
+import { UserComponent } from './users/user.component';
+import { TaskComponent } from './tasks/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    UserComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +26,6 @@ import { TasksModule } from './tasks/tasks.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: []
+  exports: [UserComponent, TaskComponent]
 })
 export class AppModule { }

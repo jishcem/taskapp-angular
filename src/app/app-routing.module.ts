@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { UserListComponent } from './users/user-list/user-list.component';
+import { UserComponent } from './users/user.component';
+import { TaskComponent } from './tasks/task.component';
+import { UsersModule } from './users/users.module';
 
 const routes: Routes = [  
   {
@@ -12,7 +14,10 @@ const routes: Routes = [
     path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
-    path: 'users/list', component: UserListComponent
+    path: 'user', loadChildren: './users/users.module#UsersModule'
+  },
+  {
+    path: 'task', loadChildren: './tasks/tasks.module#TasksModule'
   },
   {
     path: '**', component: PageNotFoundComponent
