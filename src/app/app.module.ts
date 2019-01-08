@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,9 +21,10 @@ import { TaskComponent } from './tasks/task.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     UsersModule,
     TasksModule,
-    AppRoutingModule    
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
