@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from "rxjs/operators";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-task-view',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskViewComponent implements OnInit {
 
-  constructor() { }
+  taskId$ : Observable<string>;
 
-  ngOnInit() {
+  constructor(
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit() {    
+    this.taskId$ = this.route.paramMap.pipe(
+      switchMap( (params: ParamMap) => { return params.get('id'); } )
+    );  
   }
 
 }

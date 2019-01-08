@@ -1,3 +1,8 @@
 <p>
-  task-view works!
+  task-view works!  
 </p>
+
+
+<pre *ngIf="taskId$ | async as taskId">
+  {{ taskId }}
+</pre>
